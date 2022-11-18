@@ -11,7 +11,7 @@ Math Magician is an interactive react base application.
 
 # Live-Demo (If available)
 
-Here is a [link] (./) to the live page.
+Here is a [link](./) to the live page.
 
 ## Major languages 
 - HTML
@@ -21,14 +21,15 @@ Here is a [link] (./) to the live page.
 ## Technologies used 
 - GitHub / GitBash
 - Visual Studio Code 
-- Jest / Webpack / Linters
+- Jest / Webpack / Linters / npm
 
 ## Getting Started
 
-> In order to use the project files, Kindly follow these steps:
+In order to use the project files, Kindly follow these steps:
 
 ### Steps
 
+- Download and install `node`.
 - To clone the project select the desired directory in cmd and run: `git clone https://github.com/UmerZia/math-magicians.git`
 - Install npm dependencies: `npm install`
 - To check the live preview: `npm run start`
