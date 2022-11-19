@@ -14,7 +14,7 @@ Math Magician is an interactive react base application.
 
 # Live-Demo (If available)
 
-Here is a [link](/.) to the live page.
+Coming Soon.
 
 ## Major languages 
 - HTML
