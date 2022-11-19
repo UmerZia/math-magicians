@@ -11,6 +11,7 @@ Math Magician is an interactive react base application.
 - Add `calculate` & `operate` to logic folder.
 - Implement the event handlers you need to use the math logic.
 - use `state` and `props`.
+- Refactor the Calculator component with hooks
 
 # Live-Demo (If available)
 
