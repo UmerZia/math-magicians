@@ -1,48 +1,61 @@
 import React, { Component } from 'react';
 import style from './Calculator.module.css';
+import calculate from '../../logic/calculate';
 
 export default class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: '',
+      next: '',
+      operation: '',
+    };
+  }
+
+  handleClick = (e) => {
+    const buttonName = e.target.innerHTML;
+    this.setState((prevState) => ({
+      ...calculate(prevState, buttonName),
+    }));
   }
 
   render() {
+    const { total, next, operation } = this.state;
     return (
       <div>
         <div>
           <table>
             <tr>
-              <td className={style['result-field']} colSpan="4">0</td>
+              <td className={style['result-field']} colSpan="4">{ next || operation || total || ''}</td>
             </tr>
             <tr>
-              <td className={style['btn-type-1']}>AC</td>
-              <td className={style['btn-type-1']}>+/-</td>
-              <td className={style['btn-type-1']}>%</td>
-              <td className={style['btn-type-3']}>&#247;</td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>AC</button></td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>+/-</button></td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>%</button></td>
+              <td><button type="button" className={style['btn-type-3']} onClick={this.handleClick}>&#247;</button></td>
             </tr>
             <tr>
-              <td className={style['btn-type-1']}>7</td>
-              <td className={style['btn-type-1']}>8</td>
-              <td className={style['btn-type-1']}>9</td>
-              <td className={style['btn-type-3']}>x</td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>7</button></td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>8</button></td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>9</button></td>
+              <td><button type="button" className={style['btn-type-3']} onClick={this.handleClick}>x</button></td>
             </tr>
             <tr>
-              <td className={style['btn-type-1']}>4</td>
-              <td className={style['btn-type-1']}>5</td>
-              <td className={style['btn-type-1']}>6</td>
-              <td className={style['btn-type-3']}>-</td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>4</button></td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>5</button></td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>6</button></td>
+              <td><button type="button" className={style['btn-type-3']} onClick={this.handleClick}>-</button></td>
             </tr>
             <tr>
-              <td className={style['btn-type-1']}>1</td>
-              <td className={style['btn-type-1']}>2</td>
-              <td className={style['btn-type-1']}>3</td>
-              <td className={style['btn-type-3']}>+</td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>1</button></td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>2</button></td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>3</button></td>
+              <td><button type="button" className={style['btn-type-3']} onClick={this.handleClick}>+</button></td>
             </tr>
             <tr>
-              <td className={style['btn-type-1']} colSpan="2">0</td>
-              <td className={style['btn-type-1']}>.</td>
-              <td className={style['btn-type-3']}>=</td>
+              <td colSpan="2"><button type="button" className={style.zero} onClick={this.handleClick}>0</button></td>
+              <td><button type="button" className={style['btn-type-1']} onClick={this.handleClick}>.</button></td>
+              <td><button type="button" className={style['btn-type-3']} onClick={this.handleClick}>=</button></td>
             </tr>
           </table>
         </div>
