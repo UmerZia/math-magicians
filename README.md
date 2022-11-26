@@ -41,6 +41,7 @@ In order to use the project files, Kindly follow these steps:
 - For StyLint test, run: `npx stylelint "**/*.{css,scss}"`
 - For WebHint test, run: `npx hint .`
 - For EsLint test, run: `npx eslint .`
+- For jest test, run: `npx run test`.
 
 ### Prerequisites
 
